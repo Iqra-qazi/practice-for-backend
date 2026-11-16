@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  color: #172033;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f8fafc;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  color: #172033;
+  background: #fecaca;
+}
+
+.auth-grid {
+  background-image: linear-gradient(rgba(198, 40, 40, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198, 40, 40, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.glass-panel {
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(23, 32, 51, 0.09), 0 0 0 1px rgba(226, 232, 240, 0.8);
+}
+
+.soft-scrollbar {
+  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-width: thin;
+}
+
+@layer components {
+  .portal-card {
+    @apply rounded-2xl border bg-white;
+    border-color: #e2e8f0;
+    box-shadow: 0 10px 30px rgba(23, 32, 51, 0.05);
+  }
+
+  .portal-input {
+    @apply h-12 w-full rounded-xl border bg-white px-3.5 text-sm text-ink outline-none transition placeholder:text-slate-400 focus:border-blood focus:ring-4 focus:ring-red-100;
+    border-color: #e2e8f0;
+  }
+
+  .portal-label {
+    @apply mb-2 block text-sm font-semibold text-ink;
+  }
+
+  .portal-primary-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-blood px-5 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blood disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .portal-secondary-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:border-red-200 hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blood disabled:cursor-not-allowed disabled:opacity-50;
+    border-color: #e2e8f0;
+  }
+
+  .portal-eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-blood;
+  }
+
+  .portal-skeleton {
+    @apply animate-pulse rounded-lg bg-slate-100;
+  }
+}
